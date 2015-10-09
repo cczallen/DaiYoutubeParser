@@ -42,3 +42,10 @@ simple to use
 	}
 }];
 `````
+
+Installation
+
+CocoaPods
+
+pod 'DaiYoutubeParser', :git => 'https://github.com/cczallen/DaiYoutubeParser.git'
+
