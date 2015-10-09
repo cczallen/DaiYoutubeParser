@@ -54,6 +54,11 @@
     
     // 讀取本地 html 播放框架
     NSString *htmlFilePath = [[NSBundle mainBundle] pathForResource:@"YoutubeParserBridge" ofType:@"html"];
+    if (htmlFilePath == nil) {
+        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Frameworks/DaiYoutubeParser.framework/resources" ofType:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+        htmlFilePath = [bundle pathForResource:@"YoutubeParserBridge" ofType:@"html"];
+    }
     NSString *originalHtmlString = [NSString stringWithContentsOfFile:htmlFilePath encoding:NSUTF8StringEncoding error:nil];
     NSString *htmlWithParameterString = [NSString stringWithFormat:originalHtmlString, screenSize.width, screenSize.height, youtubeID, videoQualityString];
 
