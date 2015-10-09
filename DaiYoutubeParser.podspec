@@ -9,7 +9,9 @@ Pod::Spec.new do |s|
   s.platform     =  :ios, '8.0'
   s.source       =  { :git => 'https://github.com/cczallen/DaiYoutubeParser.git', :tag => s.version.to_s }
   s.source_files = 'DaiYoutubeParser/DaiYoutubeParser/*.{h,m,html}'
-
+  s.ios.resource_bundle = {
+    'resources' => ['YoutubeParserBridge.html']
+  }
   s.requires_arc = true
   
 # Pod Dependencies
